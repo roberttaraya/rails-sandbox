@@ -8,6 +8,7 @@ gem "coffee-rails"
 gem "delayed_job_active_record"
 gem "email_validator"
 gem "flutie"
+gem "haml-rails"
 gem "high_voltage"
 gem "i18n-tasks"
 gem "jquery-rails"
@@ -31,6 +32,8 @@ end
 
 group :development, :test do
   gem "awesome_print"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "byebug"
   gem "dotenv-rails"
   gem "factory_girl_rails"
