@@ -16,7 +16,7 @@ module Casein
       if Rails.env.production?
         'http://www.caseincms.com'
       else
-        'http://0.0.0.0:3000'
+        'http://0.0.0.0:8000'
       end
     end
 
