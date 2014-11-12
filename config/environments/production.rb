@@ -31,7 +31,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -62,26 +62,28 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = SMTP_SETTINGS
+  if config.respond_to?(:action_mailer)
+    # config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = SMTP_SETTINGS
 
 
-  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
-  # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
+    # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+    # the I18n.default_locale when a translation cannot be found).
+    config.i18n.fallbacks = true
 
-  # Send deprecation notices to registered listeners.
-  config.active_support.deprecation = :notify
+    # Send deprecation notices to registered listeners.
+    config.active_support.deprecation = :notify
 
-  # Disable automatic flushing of the log to improve performance.
-  # config.autoflush_log = false
+    # Disable automatic flushing of the log to improve performance.
+    # config.autoflush_log = false
 
-  # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+    # Use default logging formatter so that PID and timestamp are not suppressed.
+    config.log_formatter = ::Logger::Formatter.new
 
-  # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+    # Do not dump schema after migrations.
+    config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'rails-sandbox.com' }
+    config.action_mailer.default_url_options = { host: 'rails-sandbox.com' }
+  end
 end
