@@ -5,6 +5,7 @@ ruby "2.1.3"
 gem "airbrake"
 gem "bourbon", "~> 3.2.1"
 gem "coffee-rails"
+gem 'comfortable_mexican_sofa', '~> 1.12.0'
 gem "delayed_job_active_record"
 gem "email_validator"
 gem "flutie"
